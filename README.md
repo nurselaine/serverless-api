@@ -6,8 +6,8 @@
 
   Lambda is used to create each REST method's handler (GET, GET ONE, PUT, POST, and DELETE)
 
-## Set-up 
-  - npm i dynamoose 
+## Set-up
+  - npm i dynamoose
 
 ## Questions
   1. What is the root URL to your API?
@@ -28,6 +28,6 @@
     d. PUT: Returns the previous object that has just been updated
     e. DELETE: Returns a string that deletion has been successful and an empty object
 
-![UML]('https://www.figma.com/file/MwgtqvhGUv38aeQcWk3vW7/Untitled?node-id=0%3A1')
-- HERE IS THE LINK TO UML: https://www.figma.com/file/MwgtqvhGUv38aeQcWk3vW7/Untitled?node-id=0%3A1
- - WILL UPDATE TO README IMAGE SOON!
+## AWS Gateway, Dynamo, and Lambda UML
+
+![UML](./lab18UML.png)
