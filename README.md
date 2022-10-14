@@ -29,5 +29,23 @@
     e. DELETE: Returns a string that deletion has been successful and an empty object
 
 ## AWS Gateway, Dynamo, and Lambda UML
+  1. Create a table using DynamoDB and make sure to add an Id attribute.
+  2. Create a Rest API through Gateway API. Add a resource /person and then add methods to the resource
+  3. For each method, create a lambda function that uses dynamoose methods
+    a. Make sure to npm init and install dynamoose
+  4. Test each method through the API Gateway, adding body parameters and query parameters as necessary
+  5. Create a deployed API through the resources tab of the API Gateway and use the invoke link to test all endpoints creates
+
+## AWS SNS & SQS
+  1. Create an SNS FIFO and add a topic
+  2. Create a SQS FIFO and copy the arn to use to subscribe to a SNS topic
+  3. In a code editor, create a file for a vendor/s and a ile for a driver
+    a. for set up: npm init -y and install sqs-consumer and sqs-producer
+  4. Vendor.js, import dependencies (AWS, Chance) and update the region. Then declare variables for the SNS arn and the SQS queue for that vendor
+  5. The vendor will create a message that will be published to the SNS which will then be send to the queue FIFO. 
+  6. The Driver function will be polling from the FIFO queue. When a message is recieved from the queue, the driver will create a message and send a message to the SQS queue for the vendor that was recieved by the FIFO queue - the driver's message will say the package has been delivered
+  7. Once the vendor (that is subscribed to the vendor queue) will recieve the message that the package was the delivered
+  8. A set interval function was used on the vendor to send out a pick up order message to the SNS every 10 seconds. These messages will be logged in the according terminals every interval
 
 ![UML](./lab18UML.png)
+![Lab 19 UML](./assets/lab19.png)
